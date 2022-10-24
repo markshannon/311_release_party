@@ -1,0 +1,28 @@
+digraph G {
+    
+    graph [ dpi = 300 ]; 
+
+    rankdir="LR"
+
+    NULL [ label = " NULL"; shape="plain"]
+
+	subgraph cluster_chunk2 {
+        compound=true;
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white; shape = rectangle];
+        f3 [label="frame"];
+        f4 [label="frame"];
+        f5 [label="frame"];
+        f6 [label="frame"];
+        label="Stack chunk"
+	}
+
+    NULL [color=white]
+    f3 -> f4 [label = "previous"]
+    f4 -> f5 [label = "previous"]
+    f5 -> f6 [label = "previous"]
+    f6 -> NULL [label = "previous"]
+
+
+}

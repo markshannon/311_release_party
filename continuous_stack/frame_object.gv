@@ -1,0 +1,25 @@
+digraph frame_object {
+    
+    graph [ dpi = 300 ]; 
+
+    rankdir = "LR"
+
+
+    frame_object [
+        shape = none
+        label = <<table border="0" cellspacing="0">
+                    <tr><td><b>Frame object</b></td></tr>
+                    <tr><td border="1" color = "lightgrey" >Header</td></tr>
+                    <tr><td border="1" port="back">back</td></tr>
+                    <tr><td border="1">nonlocals/globals/builtins</td></tr>
+                    <tr><td border="1">debug and tracing info</td></tr>
+                    <tr><td border="1" port="func">function</td></tr>
+                    <tr><td border="1"> Local Variables </td></tr>
+                    <tr><td border="1">Evaluation Stack</td></tr>
+                </table>>
+    ]
+
+    frame_object:back -> "Previous frame"
+    frame_object:func -> "foo"
+    
+}

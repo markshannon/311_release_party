@@ -1,0 +1,40 @@
+digraph frames_with_generator {
+
+    rankdir = "LR";
+    graph [ dpi = 300 ]; 
+    subgraph cluster_gen {
+        compound=true;
+        g_f [label="_PyFrame"];
+        label="generator";
+
+    }
+
+	subgraph cluster_chunk {
+        compound=true;
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white; shape = rectangle];
+        f0 [label="frame"];
+        fake [style="invis"]
+        f1 [label="frame"];
+        f2 [label="frame"];
+		label = "Chunk";
+	}
+
+
+    NULL [color=white]
+    
+    f0 -> g_f
+    fake -> f0 [style="invis"]
+    f0 -> f1[style="invis"]
+    g_f -> f1
+    f1 -> f2
+    f2 -> NULL
+
+    #fobj [label = "PyFrameObject"; shape = rectangle];
+    #fobj -> f0 [label="f_frame"]
+    #f0 -> fobj [label ="frame_obj"]
+
+
+
+}

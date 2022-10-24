@@ -1,0 +1,19 @@
+digraph frame_object {
+    
+    graph [ dpi = 300 ]; 
+
+    rankdir = "LR"
+
+    NULL [ label = " NULL"; shape="plain"]
+
+
+    f0 [label="frame"; shape="rectangle"];
+    f1 [label="frame"; shape="rectangle"];
+    f2 [label="frame"; shape="rectangle"];
+
+    f0 -> f1 [label = "previous"]
+    f1 -> f2 [label = "previous"]
+    f2 -> NULL [label = "previous"]
+
+
+}

@@ -1,0 +1,36 @@
+digraph frames_with_object {
+
+    graph [ dpi = 300 ]; 
+    rankdir="LR"
+
+    NULL [ label = " NULL"; shape="plain"]
+    NULL2 [ label = " NULL"; shape="plain"]
+
+	subgraph cluster_chunk1 {
+        compound=true;
+		style=filled;
+		color=lightgrey;
+		node [style=filled,color=white; shape = rectangle];
+        fake [style="invis"]
+        fake2 [style="invis"]
+        f1 [label="frame"];
+        f2 [label="frame"];
+        label="Stack chunk"
+	}
+
+    NULL [color=white]
+    
+    fake -> fake2 [style="invis"]
+    fake2 -> f1 [style="invis"]
+    f1 -> f2 [label = "previous"]
+    f2 -> NULL [label = "previous"]
+
+    subgraph cluster_object {
+        compound=true;
+        data [label="frame data"; shape="rectangle"; style="filled"; fillcolor="lightgreen"];
+        frame [label="frame"; shape="plain"];
+        label="Frame object";
+    }
+
+    frame -> NULL2;
+}
