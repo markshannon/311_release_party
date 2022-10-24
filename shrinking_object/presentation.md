@@ -188,7 +188,7 @@ Compare with:
 | Language| Size (in bytes) |
 | ---- | --- |
 | Python 2.7 | 352 |
-| Python future | 96 |
+| Python future | 80 |
 | Java | 40-48 |
 | C++ | 32 |
 
