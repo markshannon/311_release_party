@@ -60,6 +60,7 @@ digraph object_layout_33 {
 
     object:weak ->  NULL
     object:cls -> class
+    class -> keys
     object:dict -> dictionary:p0
     dictionary:values -> values:p0
     dictionary:keys -> keys
